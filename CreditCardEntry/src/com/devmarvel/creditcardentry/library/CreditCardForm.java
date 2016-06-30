@@ -242,9 +242,10 @@ public class CreditCardForm extends RelativeLayout {
 	/**
 	 * @param cardNumber the card number to show
 	 * @param focusNextField true to go to next field (only works if the number is valid)
+	 * @param mask true if the number is a credit card mask number
 	 */
-	public void setCardNumber(String cardNumber, boolean focusNextField) {
-		entry.setCardNumber(cardNumber, focusNextField);
+	public void setCardNumber(String cardNumber, boolean focusNextField, boolean mask) {
+		entry.setCardNumber(cardNumber, focusNextField, mask);
 	}
 
 	/**
@@ -369,5 +370,26 @@ public class CreditCardForm extends RelativeLayout {
     public void setZipCodeTextHint(String text) {
         entry.setZipCodeTextHint(text);
     }
+
+	/** Enable or disable input fields **/
+
+	public void enableCreditCardField (boolean enable) {
+		entry.enableCreditCardField(enable);
+	}
+
+
+	public void enableExpDateField (boolean enable) {
+		entry.enableExpDateField(enable);
+	}
+
+
+	public void enableZipCodeField (boolean enable) {
+		entry.enableZipCodeField(enable);
+	}
+
+
+	public void enableSecurityCodeField (boolean enable) {
+		entry.enableSecurityCodeField(enable);
+	}
 }
 

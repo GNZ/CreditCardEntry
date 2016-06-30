@@ -379,7 +379,8 @@ public class CreditCardEntry extends HorizontalScrollView implements
     /**
      * set the card number will auto focus next field if param is true
      */
-    public void setCardNumber(String cardNumber, boolean nextField) {
+    public void setCardNumber(String cardNumber, boolean nextField, boolean mask) {
+        this.creditCardText.setMaskNumber(mask);
         setValue(this.creditCardText, cardNumber, nextField);
     }
 
@@ -664,5 +665,33 @@ public class CreditCardEntry extends HorizontalScrollView implements
     public void setZipCodeTextHint(String text) {
         zipCodeText.setHint(text);
     }
+
+    /** Enable or disable input fields **/
+
+    public void enableCreditCardField (boolean enable) {
+        creditCardText.setEnabled(enable);
+        textFourDigits.setEnabled(enable);
+        creditCardText.setFocusable(enable);
+        textFourDigits.setFocusable(enable);
+    }
+
+
+    public void enableExpDateField (boolean enable) {
+        expDateText.setEnabled(enable);
+        expDateText.setFocusable(enable);
+    }
+
+
+    public void enableZipCodeField (boolean enable) {
+        zipCodeText.setEnabled(enable);
+        zipCodeText.setFocusable(enable);
+    }
+
+
+    public void enableSecurityCodeField (boolean enable) {
+        securityCodeText.setEnabled(enable);
+        securityCodeText.setFocusable(enable);
+    }
+
 
 }

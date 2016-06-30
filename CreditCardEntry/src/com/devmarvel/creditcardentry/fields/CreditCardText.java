@@ -14,6 +14,8 @@ public class CreditCardText extends CreditEntryFieldBase {
 
 	private CardType type;
 
+	private boolean isMaskNumber;
+
 	private String mHelperText;
 
 	public CreditCardText(Context context) {
@@ -84,7 +86,7 @@ public class CreditCardText extends CreditEntryFieldBase {
 			if (number.startsWith(formatted)) {
 				remainder = number.replace(formatted, "");
 			}
-			if (CreditCardUtil.isValidNumber(formatted)) {
+			if (CreditCardUtil.isValidNumber(formatted) || isMaskNumber) {
 				setValid(true);
 				delegate.onCreditCardNumberValid(remainder);
 			} else {
@@ -108,5 +110,9 @@ public class CreditCardText extends CreditEntryFieldBase {
 	@Override
 	public String getHelperText() {
 		return (mHelperText != null ? mHelperText : context.getString(R.string.CreditCardNumberHelp));
+	}
+
+	public void setMaskNumber(boolean maskNumber) {
+		this.isMaskNumber = maskNumber;
 	}
 }
