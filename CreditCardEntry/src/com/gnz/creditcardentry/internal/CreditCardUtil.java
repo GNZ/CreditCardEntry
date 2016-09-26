@@ -1,8 +1,8 @@
-package com.devmarvel.creditcardentry.internal;
+package com.gnz.creditcardentry.internal;
 
 import android.annotation.SuppressLint;
 
-import com.devmarvel.creditcardentry.library.CardType;
+import com.gnz.creditcardentry.library.CardType;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

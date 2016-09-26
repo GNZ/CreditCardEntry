@@ -3,10 +3,35 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:2.1.0'
     }
 }
 apply plugin: 'com.android.library'
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'CreditCardEntry'
+
+    publishedGroupId = 'com.gnz.creditcardentry'
+    libraryName = 'CreditCardEntry'
+    artifact = 'CreditCardEntry'
+
+    libraryDescription = 'UI for credit card base on Square credit card entry.'
+
+    siteUrl = 'https://github.com/GNZ/CreditCardEntry'
+    gitUrl = 'https://github.com/GNZ/CreditCardEntry'
+
+    libraryVersion = '1.4.7'
+
+    developerId = 'gnz'
+    developerName = 'Gonzalo Acosta'
+    developerEmail = 'acosta.gonzalo@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 repositories {
     mavenCentral()
@@ -37,3 +62,6 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:22.1.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'

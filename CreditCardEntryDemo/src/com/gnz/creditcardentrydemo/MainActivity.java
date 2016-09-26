@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentrydemo;
+package com.gnz.creditcardentrydemo;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,9 +6,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.devmarvel.creditcardentry.library.CardValidCallback;
-import com.devmarvel.creditcardentry.library.CreditCard;
-import com.devmarvel.creditcardentry.library.CreditCardForm;
+import com.gnz.creditcardentrydemo.R;
+import com.gnz.creditcardentry.library.CardValidCallback;
+import com.gnz.creditcardentry.library.CreditCard;
+import com.gnz.creditcardentry.library.CreditCardForm;
 
 public class MainActivity extends Activity {
 	private static final String TAG = "MainActivity";
@@ -48,13 +49,18 @@ public class MainActivity extends Activity {
 		final CreditCardForm prepopulated = (CreditCardForm) findViewById(R.id.pre_populated_form);
 		prepopulated.setOnCardValidCallback(cardValidCallback);
 		// populate the card, but don't try to focus the next field
-		prepopulated.setCardNumber("4242 4242 4242 4242", false);
+		prepopulated.setCardNumber("4242 42XX XXXX 4242", true, true);
+		prepopulated.setExpDate("12/22", true);
+		prepopulated.enableCreditCardField(false);
+		prepopulated.enableExpDateField(false);
 
-		final CreditCardForm clear = (CreditCardForm) findViewById(R.id.clear_test_form);
+		final CreditCardForm clear = (CreditCardForm) findViewById(R.id.pre_populated_form);
 		findViewById(R.id.clear_test_button).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				clear.clearForm();
+				prepopulated.clearForm();
+				prepopulated.enableCreditCardField(true);
+				prepopulated.enableExpDateField(true);
 			}
 		});
 	}

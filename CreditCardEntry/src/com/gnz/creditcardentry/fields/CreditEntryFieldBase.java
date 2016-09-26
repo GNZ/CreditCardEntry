@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.fields;
+package com.gnz.creditcardentry.fields;
 
 import android.R.color;
 import android.content.Context;
@@ -27,8 +27,8 @@ import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.internal.CreditCardFieldDelegate;
+import com.gnz.creditcardentry.R;
+import com.gnz.creditcardentry.internal.CreditCardFieldDelegate;
 
 import java.lang.reflect.Field;
 

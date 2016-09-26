@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.library;
+package com.gnz.creditcardentry.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -19,8 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.internal.CreditCardEntry;
+import com.gnz.creditcardentry.R;
+import com.gnz.creditcardentry.internal.CreditCardEntry;
 
 public class CreditCardForm extends RelativeLayout {
 

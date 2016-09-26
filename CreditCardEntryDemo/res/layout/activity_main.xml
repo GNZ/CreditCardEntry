@@ -21,7 +21,7 @@
             android:text="Form with no zip"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/form_no_zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:text="Form with zip and no helper text"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/form_with_zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:text="Form with yellow background and red border"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/yellow_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             android:text="Form with just card number"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/just_card_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:text="Form with just card number and zip"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/card_and_zip_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,15 +112,15 @@
             android:text="Form with prepopulated card number"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/pre_populated_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            app:include_exp="false"
+            app:include_exp="true"
             app:include_helper="false"
-            app:include_security="false"
-            app:include_zip="true"/>
+            app:include_security="true"
+            app:include_zip="false"/>
 
         <TextView
             android:id="@+id/clear_test_label"
@@ -131,7 +131,7 @@
             android:text="Form with clear button"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.devmarvel.creditcardentry.library.CreditCardForm
+        <com.gnz.creditcardentry.library.CreditCardForm
             android:id="@+id/clear_test_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,8 +1,8 @@
-package com.devmarvel.creditcardentry.library;
+package com.gnz.creditcardentry.library;
 
 import android.support.annotation.DrawableRes;
 
-import com.devmarvel.creditcardentry.R;
+import com.gnz.creditcardentry.R;
 
 import java.io.Serializable;
 

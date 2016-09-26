@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.devmarvel.creditcardentrydemo"
+    package="com.gnz.creditcardentrydemo"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.devmarvel.creditcardentrydemo.MainActivity"
+            android:name="com.gnz.creditcardentrydemo.MainActivity"
             android:windowSoftInputMode="adjustResize"
             android:label="@string/app_name" >
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.devmarvel.creditcardentrydemo.SimpleActivity"
+            android:name="com.gnz.creditcardentrydemo.SimpleActivity"
             android:windowSoftInputMode="adjustResize"
             android:label="@string/app_name" >
         </activity>

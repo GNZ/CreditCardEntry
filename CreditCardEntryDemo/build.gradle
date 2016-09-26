@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:2.1.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -13,11 +13,11 @@ repositories {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 22
     }
 
@@ -36,5 +36,5 @@ android {
 
 dependencies {
     compile project(':CreditCardEntry')
-    compile 'com.android.support:support-v4:22.1.1'
+    compile 'com.android.support:support-v4:24.2.1'
 }

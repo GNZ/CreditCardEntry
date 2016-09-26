@@ -1,4 +1,4 @@
-package com.devmarvel.creditcardentry.internal;
+package com.gnz.creditcardentry.internal;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,15 +37,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.devmarvel.creditcardentry.R;
-import com.devmarvel.creditcardentry.fields.CreditCardText;
-import com.devmarvel.creditcardentry.fields.CreditEntryFieldBase;
-import com.devmarvel.creditcardentry.fields.ExpDateText;
-import com.devmarvel.creditcardentry.fields.SecurityCodeText;
-import com.devmarvel.creditcardentry.fields.ZipCodeText;
-import com.devmarvel.creditcardentry.library.CardType;
-import com.devmarvel.creditcardentry.library.CardValidCallback;
-import com.devmarvel.creditcardentry.library.CreditCard;
+import com.gnz.creditcardentry.R;
+import com.gnz.creditcardentry.fields.CreditCardText;
+import com.gnz.creditcardentry.fields.CreditEntryFieldBase;
+import com.gnz.creditcardentry.fields.ExpDateText;
+import com.gnz.creditcardentry.fields.SecurityCodeText;
+import com.gnz.creditcardentry.fields.ZipCodeText;
+import com.gnz.creditcardentry.library.CardType;
+import com.gnz.creditcardentry.library.CardValidCallback;
+import com.gnz.creditcardentry.library.CreditCard;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -300,14 +300,14 @@ public class CreditCardEntry extends HorizontalScrollView implements
 
     public void focusOnField(final CreditEntryFieldBase field, String initialFieldValue) {
         field.requestFocus();
-        if(!scrolling) {
+        if (!scrolling) {
             scrolling = true;
             scrollToTarget(field instanceof CreditCardText ? 0 : field.getLeft(), new Runnable() {
                 @Override
                 public void run() {
                     scrolling = false;
                     // if there was another focus before we were done.. catch up.
-                    if(!field.hasFocus()) {
+                    if (!field.hasFocus()) {
                         View newFocus = getFocusedChild();
                         if (newFocus instanceof CreditEntryFieldBase) {
                             focusOnField((CreditEntryFieldBase) newFocus);
@@ -317,7 +317,7 @@ public class CreditCardEntry extends HorizontalScrollView implements
             });
         }
 
-        if(initialFieldValue != null && initialFieldValue.length() > 0) {
+        if (initialFieldValue != null && initialFieldValue.length() > 0) {
             field.formatAndSetText(initialFieldValue);
         }
 
@@ -336,7 +336,7 @@ public class CreditCardEntry extends HorizontalScrollView implements
 
     private void scrollToTarget(int target, final Runnable after) {
         int scrollX = getScrollX();
-        if(scrollX == target) {
+        if (scrollX == target) {
             if (after != null) after.run();
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
@@ -461,11 +461,25 @@ public class CreditCardEntry extends HorizontalScrollView implements
                 delegate.onBadInput(field);
             }
 
-            @Override public void onExpirationDateValid(String remainder) {}
-            @Override public void onSecurityCodeValid(String remainder) {}
-            @Override public void onZipCodeValid() { }
-            @Override public void focusOnField(CreditEntryFieldBase field, String initialValue) { }
-            @Override public void focusOnPreviousField(CreditEntryFieldBase field) { }
+            @Override
+            public void onExpirationDateValid(String remainder) {
+            }
+
+            @Override
+            public void onSecurityCodeValid(String remainder) {
+            }
+
+            @Override
+            public void onZipCodeValid() {
+            }
+
+            @Override
+            public void focusOnField(CreditEntryFieldBase field, String initialValue) {
+            }
+
+            @Override
+            public void focusOnPreviousField(CreditEntryFieldBase field) {
+            }
         };
     }
 
@@ -585,14 +599,17 @@ public class CreditCardEntry extends HorizontalScrollView implements
     }
 
     @Override
-    public void onLongPress(MotionEvent e) {}
+    public void onLongPress(MotionEvent e) {
+    }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         return false;
     }
 
-    @Override public void onShowPress(MotionEvent e) {}
+    @Override
+    public void onShowPress(MotionEvent e) {
+    }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
@@ -632,7 +649,9 @@ public class CreditCardEntry extends HorizontalScrollView implements
         });
     }
 
-    /** helper & hint setting **/
+    /**
+     * helper & hint setting
+     **/
 
     public void setCreditCardTextHelper(String text) {
         creditCardText.setHelperText(text);
@@ -666,31 +685,32 @@ public class CreditCardEntry extends HorizontalScrollView implements
         zipCodeText.setHint(text);
     }
 
-    /** Enable or disable input fields **/
+    /**
+     * Enable or disable input fields
+     **/
 
-    public void enableCreditCardField (boolean enable) {
+    public void enableCreditCardField(boolean enable) {
         creditCardText.setEnabled(enable);
         textFourDigits.setEnabled(enable);
-        creditCardText.setFocusable(enable);
-        textFourDigits.setFocusable(enable);
+        textFourDigits.setTextColor(enable ? Color.BLACK: Color.GRAY );
     }
 
 
-    public void enableExpDateField (boolean enable) {
+    public void enableExpDateField(boolean enable) {
         expDateText.setEnabled(enable);
-        expDateText.setFocusable(enable);
+        expDateText.setTextColor(enable ? Color.BLACK: Color.GRAY );
     }
 
 
-    public void enableZipCodeField (boolean enable) {
+    public void enableZipCodeField(boolean enable) {
         zipCodeText.setEnabled(enable);
-        zipCodeText.setFocusable(enable);
+        zipCodeText.setTextColor(enable ? Color.BLACK: Color.GRAY );
     }
 
 
-    public void enableSecurityCodeField (boolean enable) {
+    public void enableSecurityCodeField(boolean enable) {
         securityCodeText.setEnabled(enable);
-        securityCodeText.setFocusable(enable);
+        securityCodeText.setTextColor(enable ? Color.BLACK: Color.GRAY );
     }
 
 
