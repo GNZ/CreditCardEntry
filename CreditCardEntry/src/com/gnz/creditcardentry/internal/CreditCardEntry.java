@@ -484,6 +484,7 @@ public class CreditCardEntry extends HorizontalScrollView implements
     }
 
     public void clearAll() {
+        creditCardText.setMaskNumber(false);
         creditCardText.setText("");
         expDateText.setText("");
         securityCodeText.setText("");
